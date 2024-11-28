@@ -1,6 +1,18 @@
 public class Kafe01 {
-    public static void Menu(String namaPelanggan, boolean isMember) {
+    public static void Menu(String namaPelanggan, boolean isMember, String kodePromo) {
+
         System.out.println("Selamat datang " + namaPelanggan + "!");
+        System.out.println("Kode Promo: " + kodePromo);
+
+        if (kodePromo.equalsIgnoreCase("DISKON50")) {
+            System.out.println("Anda mendapatkan diskon 50% untuk setiap pembelian");
+        }
+        else if (kodePromo.equalsIgnoreCase("DISKON30")) {
+            System.out.println("Anda mendapatkan diskon 30% untuk setiap pembelian");
+        }
+        else  {
+            System.out.println("Kode invalid");
+        }
 
         if (isMember) {
             System.out.println("Anda adalah member, dapatkan diskon 10% untuk setiap pembeliaan");
@@ -17,6 +29,6 @@ public class Kafe01 {
         System.out.println("Silahkan pilih menu yang anda inginkan.");
     }
     public static void main(String[] args) {
-        Menu("Andi", true);
+        Menu("Andi", true, "DISKON50");
     }
 }
